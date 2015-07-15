@@ -13,6 +13,7 @@ body {
 }
 .site-name {
 	font-family: 'Raleway', sans-serif;
+	font-weight: bold
 }
 html,
 body {
@@ -569,6 +570,7 @@ textarea {
 }
 .site-slogan {
 	font-size: 12px;
+	font-style: italic;
 }
 
 /* Testimonials

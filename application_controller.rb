@@ -7,4 +7,8 @@ class MyApp < Sinatra::Base
     erb :index
   end
 
+  get '/vote' do
+    erb :under_construction
+  end
+
 end
