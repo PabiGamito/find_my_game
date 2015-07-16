@@ -9,7 +9,8 @@ class MyApp < Sinatra::Base
 
 	get '/questions' do
 		@qnum = 1
-		@questions = "Hello this is q number 1"
+		@questions = "Do you want to avoid using your brain?"
+# 		@games=[“GTA”, “Tetris”, “COD”, “Skyrim”, “WOW”, “Zelda”, “Minecraft”, “Mario_Bros”, “Final_Fantasy”, “Street_Fighter”, “Pac_Man”, “Half_Life”, “BioShock”, “Portal”, “Diablo”, “Fallout”, “God_of_War”, “The_Last of_Us”, “Super_Mario_Galaxy”, “Mass_Effect”, “LOL”, “Batman”, “Halo”]
 		erb :questions
   end
 
@@ -18,10 +19,10 @@ class MyApp < Sinatra::Base
 		@qnum = params[:qnum].to_i
 		@answer= params[:ans]
 		if @answer == "No" && @qnum == 1
-			@questions = "Next Question"
+			@questions = "Maximum Creativity?"
 			@qnum += 1
 		elsif @answer == "Yes" && @qnum == 1
-			@questions = "Other next question"
+			@questions = "How good are your reflexes?"
 			@qnum += 1
 		elsif @answer == "No" && @qnum == 2
 				@questions = "Hooray!"
