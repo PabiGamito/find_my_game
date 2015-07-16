@@ -518,3 +518,92 @@ footer .footer-below {
 	position: relative;
 	bottom: 200px
 }
+.superbuttons {
+  position: relative;
+	bottom: 150px;
+	text-align: center;
+  text-rendering: auto;
+  font-size: 17px;
+  line-height: 1.6em;
+  height: 100vh;
+  overflow: hidden;
+  padding: 18%;
+  padding-top: 25vh;
+}
+* {
+  box-sizing: border-box;
+}
+.button {
+  display: inline-block;
+  font-family: "Montserrat", "Trebuchet MS", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  padding: .8em 1.4em;
+  padding-right: 4.7em;
+  background: #139675;
+  border: none;
+  color: white;
+  transition: .2s;
+}
+.button:before,
+.button:after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  padding-top: inherit;
+  padding-bottom: inherit;
+  width: 2.8em;
+  content: "\00a0";
+  font-family: 'FontAwesome', sans-serif;
+  font-size: 1.2em;
+  text-align: center;
+  transition: .2s;
+}
+.button:before {
+  background: rgba(0, 0, 0, 0.1);
+}
+.button:hover {
+  background: #0d6952;
+}
+.button:active,
+.button:focus {
+  background: #139675;
+  outline: none;
+}
+.button {
+  border: 30px;
+  min-width: 15em;
+}
+.no {
+  background: #FE5F55;
+}
+.no:hover {
+  background: rgba(254, 95, 85, 0.85);
+}
+.no:active,
+.no:focus {
+  background: #fe5f55;
+}
+.no:after {
+  content: "\f00d";
+}
+.no:hover:after {
+  -webkit-animation: grow .4s alternate ease infinite;
+  animation: grow .4s alternate ease infinite;
+}
+.yes:after {
+  content: "\f00c";
+}
+.yes:hover:after {
+  -webkit-animation: grow 0.4s alternate ease infinite;
+  animation: grow 0.4s alternate ease infinite;
+}
+@keyframes grow {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1.4);
+  }
+}

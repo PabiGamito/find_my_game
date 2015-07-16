@@ -78,9 +78,10 @@
                     <div class="intro-text">
 											<h2><%=@questions%></h2>
 <form action='/questions' method="POST">
-	<input type="submit" name="ans" value="No">
+	<div class="superbuttons">
+<button type="submit" class="button  yes" name="ans" value="Yes">YES</button>
+<button type="submit" class="button  no" name="ans" value="No">NO</button>
 	<input type="hidden" name="qnum" value="<%=@qnum%>">
-	<input type="submit" name="ans" value="Yes">
 </form>
 </div>
                 </div>

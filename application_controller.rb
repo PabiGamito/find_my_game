@@ -9,6 +9,7 @@ class MyApp < Sinatra::Base
 
 	get '/questions' do
 		@qnum = 1
+		@questions = "Hello this is q number 1"
 		erb :questions
   end
 
@@ -24,9 +25,12 @@ class MyApp < Sinatra::Base
 			@qnum += 1
 		elsif @answer == "No" && @qnum == 2
 				@questions = "Hooray!"
+			@qnum += 1
 		elsif @answer == "Yes" && @qnum == 2
 			@questions = "Other next question"
 			@qnum += 1
+		else
+			@questions = "There are no more questions"
 		end
 		puts @questions
 		erb :questions
