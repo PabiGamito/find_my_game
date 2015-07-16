@@ -49,7 +49,30 @@ hr.star-primary {
     text-align: center;
 }
 
+hr.star-light-2,
+hr.star-primary {
+    margin: 25px auto 30px;
+    padding: 0;
+		position: relative;
+		bottom: 100px;
+    max-width: 250px;
+    border: 0;
+    border-top: solid 5px;
+    text-align: center;
+}
+
 hr.star-light:after,
+hr.star-primary:after {
+    content: "\f005";
+    display: inline-block;
+    position: relative;
+    top: -.8em;
+    padding: 0 .25em;
+    font-family: FontAwesome;
+    font-size: 2em;
+}
+
+hr.star-light-2:after,
 hr.star-primary:after {
     content: "\f005";
     display: inline-block;
@@ -75,7 +98,16 @@ hr.star-light {
     border-color: #fff;
 }
 
+hr.star-light-2 {
+    border-color: #fff;
+}
+
 hr.star-light:after {
+    color: #fff;
+    background-color: #0d84bc;
+}
+
+hr.star-light-2:after {
     color: #fff;
     background-color: #18bc9c;
 }
@@ -96,7 +128,7 @@ hr.star-primary:after {
 header {
     text-align: center;
     color: #fff;
-    background: #18bc9c;
+    background: #0d84bc;
 }
 
 header .container {
@@ -677,4 +709,9 @@ footer .footer-below {
   color: #fff;
   text-shadow: 0 1px 1px #b50236;
   border-radius: 5px;
+}
+
+.row .img-responsive{
+	position: relative;
+	bottom: 10px;
 }
