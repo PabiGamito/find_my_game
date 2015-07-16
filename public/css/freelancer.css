@@ -607,3 +607,16 @@ footer .footer-below {
     transform: scale(1.4);
   }
 }
+.qlogo {
+	border-radius: 50%;
+	width: 200px;
+	height: 200px;
+	transform: scale(2/3);
+}
+.needSpace {
+	height: 200px;
+}
+.needFormat {
+	height: 260px;
+	width: 360px;
+}
