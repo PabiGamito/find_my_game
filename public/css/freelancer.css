@@ -60,6 +60,17 @@ hr.star-primary:after {
     font-size: 2em;
 }
 
+hr.star-down,
+hr.star-primary {
+    margin: 25px auto 30px;
+    padding: 0;
+		position: relative;
+    max-width: 250px;
+    border: 0;
+    border-top: solid 5px;
+    text-align: center;
+}
+
 hr.star-light {
     border-color: #fff;
 }
@@ -496,3 +507,14 @@ footer .footer-below {
 	text-align: center;
 	background-color: yellow;
 } */
+#push1 {
+	margin-left: 300px;
+}
+#push2 {
+	margin-left: -350px;
+}
+
+#questions{
+	position: relative;
+	bottom: 200px
+}
