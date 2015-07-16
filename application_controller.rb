@@ -10,7 +10,28 @@ class MyApp < Sinatra::Base
 	get '/questions' do
 		@qnum = 1
 		@questions = "Do you want to avoid using your brain?"
-# 		@games=[“GTA”, “Tetris”, “COD”, “Skyrim”, “WOW”, “Zelda”, “Minecraft”, “Mario_Bros”, “Final_Fantasy”, “Street_Fighter”, “Pac_Man”, “Half_Life”, “BioShock”, “Portal”, “Diablo”, “Fallout”, “God_of_War”, “The_Last of_Us”, “Super_Mario_Galaxy”, “Mass_Effect”, “LOL”, “Batman”, “Halo”]
+		@games=["wow", 
+		"minecraft", 
+		"diablo", 
+		"rez", 
+		"monkeyball", 
+		"tetris", 
+		"ikaruga", 
+		"lumines", 
+		"limbo", 
+		"pacman", 
+		"punchout", 
+		"braid", 
+		"portal", 
+		"supersmashbros", 
+		"sims", 
+		"citiesskyline", 
+		"simcity", 
+		"easports", 
+		"mortalkombat", 
+		"mariokart", 
+		"rockband"]
+		#There are three more games that I can't read the name off
 		erb :questions
   end
 
@@ -21,6 +42,19 @@ class MyApp < Sinatra::Base
 		if @answer == "No" && @qnum == 1
 			@questions = "Maximum Creativity?"
 			@qnum += 1
+			@games -= ["minecraft",  
+								"tetris",  
+								"lumines", 
+								"limbo",  
+								"braid", 
+								"portal", 
+								"supersmashbros", 
+								"sims", 
+								"citiesskyline", 
+								"simcity", 
+								"easports", 
+								"mortalkombat", 
+								"mariokart"]
 		elsif @answer == "Yes" && @qnum == 1
 			@questions = "How good are your reflexes?"
 			@qnum += 1
