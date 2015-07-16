@@ -639,6 +639,21 @@ footer .footer-below {
     transform: scale(1.4);
   }
 }
+<<<<<<< HEAD
+.qlogo {
+	border-radius: 50%;
+	width: 200px;
+	height: 200px;
+	transform: scale(2/3);
+}
+.needSpace {
+	height: 200px;
+}
+.needFormat {
+	height: 260px;
+	width: 360px;
+}
+=======
 
 .flipper-container {
   text-align: center;
@@ -710,8 +725,12 @@ footer .footer-below {
   text-shadow: 0 1px 1px #b50236;
   border-radius: 5px;
 }
+<<<<<<< HEAD
 
 .row .img-responsive{
 	position: relative;
 	bottom: 10px;
 }
+=======
+>>>>>>> 04d6e6a295eac40a95effce5d3c5c757a993d502
+>>>>>>> fdbcf6fc03c9802fb552eb32b8da065196dde112
