@@ -54,7 +54,7 @@ class MyApp < Sinatra::Base
 		@remove_list_q1_n = ["wow", "diablo", "monkeyball", "ikaruga",  "pacman", "punchout", "rockband"]	
 		
 		puts params
-		@qnum = params[:qnum].to_i
+		curr_question = params[:question]
 		@answer = params[:ans]
 		
 		if @answer == "Yes"
@@ -66,24 +66,33 @@ class MyApp < Sinatra::Base
 #------HASH FOR EACH QUESTION AND THE ONE THAT FOLLOWS------#
 		#0=Yes ---- 1=No
 		map={
-			:avoid_brain => ["How are your reflexes?", "Maximum Creativity?"],
-			:good_reflexes => ["Are you on drugs?", "Do you want to point and click click click...?"],
-			:on_drugs => ["rez", "Do you want to feel like you are?"],
-			:feel_on_drugs => ["unknown", "How's your timing?"],
-			:good_timing => ["You want to rock out?", "Are 2 buttons too many for you?"],
-			:rock_out => ["rockband", "ikaruba"],
-			:two_buttons => ["pacman", "punchout"],
-			:point_and_click => ["Do you plan on playing for the next week straight?", "Do you want the hardest game ever?"],
-			:hardest_game => ["unknow", "monkeyball"],
-			:play_week => ["wow", "diablo"],
+			"Do you want to avoid using your brain?" => {:next_q => ["Are your reflexes amazing?", "Maximum Creativity?"], :remove => []},
+			
+			"Are your reflexes amazing?" => {:next_q => ["Are you on drugs?", "Do you want to point and click click click...?"], :remove => []},
+			
+			"Are you on drugs?" => {:next_q =>["rez", "Do you want to feel like you are?"], :remove => []},
+			
+			"Do you want to feel like you are?" => {:next_q => ["unknown", "How's your timing?"], :remove => []},
+			
+			"How's your timing?" => {:next_q => ["You want to rock out?", "Are 2 buttons too many for you?"], :remove => []},
+			
+			"You want to rock out?" => {:next_q => ["rockband", "ikaruba"], :remove => []},
+			
+			"Are 2 buttons too many for you?" => {:next_q => ["pacman", "punchout"], :remove => []},
+			
+			"Do you want to point and click click click...?" => {:next_q => ["Do you plan on playing for the next week straight?", "Do you want the hardest game ever?"], :remove => []},
+			
+			"Do you want the hardest game ever?" => {:next_q => ["unknow", "monkeyball"], :remove => []},
+			
+			"Do you plan on playing for the next week straight?" => {:next_q => ["wow", "diablo"], :remove => []}
 			
 			}
 		
 # 		:avoid_brain = "Do you want to avoid using your brain?"
 # 		:good_reflexes = "How are your reflexes?"
 		
-# 		@questions = map(:avoid_brain)(@ans_value)
-# 		@games = params[:games]
+		@questions = map[curr_question][:next_q][@ans_value]
+# 		@remove_list = map[@questions][:remove]
 		
 # #------------FIRST LINE OF QUESTIONS----------------#
 # 		if @answer == "Yes" && @qnum == 1
