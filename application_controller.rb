@@ -12,29 +12,7 @@ class MyApp < Sinatra::Base
 	get '/questions' do
  		@qnum = 1
  		@questions = "Do you want to avoid using your brain?"
-# 		@games=["wow", 
-# 		"minecraft", 
-# 		"diablo", 
-# 		"rez", 
-# 		"monkeyball", 
-# 		"tetris", 
-# 		"ikaruga", 
-# 		"lumines", 
-# 		"limbo", 
-# 		"pacman", 
-# 		"punchout", 
-# 		"braid", 
-# 		"portal", 
-# 		"supersmashbros", 
-# 		"sims", 
-# 		"citiesskyline", 
-# 		"simcity", 
-# 		"easports", 
-# 		"mortalkombat", 
-# 		"mariokart", 
-# 		"rockband"]
-# 		puts "test"
-# 		#puts @games
+
 # 		@games_list_object = GameList.new(@games)
 # 		puts @games_list_object.game_list
 
@@ -73,7 +51,7 @@ class MyApp < Sinatra::Base
 			
 			"Are you on drugs?" => {:next_q =>["rez", "Do you want to feel like you are?"], :remove => []},
 			
-			"Do you want to feel like you are?" => {:next_q => ["unknown", "Is your timing good?"], :remove => []},
+			"Do you want to feel like you are?" => {:next_q => ["Dangerously Flashing Lights Game", "Is your timing good?"], :remove => []},
 			
 			"Is your timing good?" => {:next_q => ["You want to rock out?", "Are 2 buttons too many for you?"], :remove => []},
 			
@@ -98,7 +76,7 @@ class MyApp < Sinatra::Base
 			
 			"Kick it oldschool?" => {:next_q => ["tetris", "lumines"], :remove => []},
 			
-			"Looking for crazy Japanese awesomeness?" => {:next_q => ["katamari_damacy", "Yes for shiny textures and No for indi-magic"], :remove => []},
+			"Looking for crazy Japanese awesomeness?" => {:next_q => ["katamari_damacy", "Yes for shiny textures and No for indi-magic?"], :remove => []},
 			
 			"Yes for shiny textures and No for indi-magic?" => {:next_q => ["portal", "braid"], :remove => []},
 		
