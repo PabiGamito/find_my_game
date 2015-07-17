@@ -715,3 +715,13 @@ footer .footer-below {
 	position: relative;
 	bottom: 10px;
 }
+.needSpace {
+	height: 360px;
+}
+.needFormat {
+	height: 245px;
+	width: 360px;
+}
+.centerText {
+	text-align: center;
+}
