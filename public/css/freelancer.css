@@ -715,7 +715,10 @@ footer .footer-below {
 	position: relative;
 	bottom: 10px;
 }
+.needSpace {
+	height: 200px;
+}
 .needFormat {
-	width: 360;
-	height: 260;
+	height: 245px;
+	width: 360px;
 }
