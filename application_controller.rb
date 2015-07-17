@@ -10,6 +10,40 @@ class MyApp < Sinatra::Base
   end
 
 	get '/questions' do
+ 		@qnum = 1
+ 		@questions = "Do you want to avoid using your brain?"
+# 		@games=["wow", 
+# 		"minecraft", 
+# 		"diablo", 
+# 		"rez", 
+# 		"monkeyball", 
+# 		"tetris", 
+# 		"ikaruga", 
+# 		"lumines", 
+# 		"limbo", 
+# 		"pacman", 
+# 		"punchout", 
+# 		"braid", 
+# 		"portal", 
+# 		"supersmashbros", 
+# 		"sims", 
+# 		"citiesskyline", 
+# 		"simcity", 
+# 		"easports", 
+# 		"mortalkombat", 
+# 		"mariokart", 
+# 		"rockband"]
+# 		puts "test"
+# 		#puts @games
+# 		@games_list_object = GameList.new(@games)
+# 		puts @games_list_object.game_list
+
+		#There are three more games that I can't read the name off
+		erb :questions
+  end
+
+	post '/questions' do
+		
 		@qnum = 1
 		@questions = "Do you want to avoid using your brain?"
 		@games=["wow", 
@@ -33,14 +67,9 @@ class MyApp < Sinatra::Base
 		"mortalkombat", 
 		"mariokart", 
 		"rockband"]
-		puts "test"
-		puts @games
-		@games_list=GameList.new(@games)
-		#There are three more games that I can't read the name off
-		erb :questions
-  end
-
-	post '/questions' do
+		@games_list_object = GameList.new(@games)
+		puts @games_list_object.game_list
+		
 		puts params
 		@qnum = params[:qnum].to_i
 		@answer = params[:ans]
@@ -56,7 +85,8 @@ class MyApp < Sinatra::Base
 				"pacman", 
 				"punchout",
 				"rockband"]
-			@games_list.remove(remove_list)
+			@games_list_object.remove(remove_list)
+			puts @games_list_object.game_list
 		elsif @answer == "Yes" && @qnum == 1
 			@questions = "Are your reflexes amazing?"
 			@qnum += 1
@@ -74,7 +104,7 @@ class MyApp < Sinatra::Base
 				"mortalkombat", 
 				"mariokart"]
 			#Missing two games	
-			games.remove(remove_list)
+			@games_list_object.remove(remove_list)
 		elsif @answer == "No" && @qnum == 2
 			@questions = "Do you want to point & click, click, click...?"
 			@qnum += 1
