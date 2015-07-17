@@ -2,8 +2,28 @@ class GameList
 	
 	attr_accessor :game_list
 	
-	def initialize(array)
-		@game_list=array
+	def initialize
+		@game_list=["wow", 
+		"minecraft", 
+		"diablo", 
+		"rez", 
+		"monkeyball", 
+		"tetris", 
+		"ikaruga", 
+		"lumines", 
+		"limbo", 
+		"pacman", 
+		"punchout", 
+		"braid", 
+		"portal", 
+		"supersmashbros", 
+		"sims", 
+		"citiesskyline", 
+		"simcity", 
+		"easports", 
+		"mortalkombat", 
+		"mariokart", 
+		"rockband"]
 	end
 	
 	def remove(remove_list)
