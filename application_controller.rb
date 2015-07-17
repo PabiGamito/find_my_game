@@ -10,28 +10,27 @@ class MyApp < Sinatra::Base
 	get '/questions' do
 		@qnum = 1
 		@questions = "Do you want to avoid using your brain?"
-		@games=[]
-# 		@games=["wow", 
-# 		"minecraft", 
-# 		"diablo", 
-# 		"rez", 
-# 		"monkeyball", 
-# 		"tetris", 
-# 		"ikaruga", 
-# 		"lumines", 
-# 		"limbo", 
-# 		"pacman", 
-# 		"punchout", 
-# 		"braid", 
-# 		"portal", 
-# 		"supersmashbros", 
-# 		"sims", 
-# 		"citiesskyline", 
-# 		"simcity", 
-# 		"easports", 
-# 		"mortalkombat", 
-# 		"mariokart", 
-# 		"rockband"]
+		@games=["wow", 
+		"minecraft", 
+		"diablo", 
+		"rez", 
+		"monkeyball", 
+		"tetris", 
+		"ikaruga", 
+		"lumines", 
+		"limbo", 
+		"pacman", 
+		"punchout", 
+		"braid", 
+		"portal", 
+		"supersmashbros", 
+		"sims", 
+		"citiesskyline", 
+		"simcity", 
+		"easports", 
+		"mortalkombat", 
+		"mariokart", 
+		"rockband"]
 		#There are three more games that I can't read the name off
 		erb :questions
   end
@@ -43,6 +42,17 @@ class MyApp < Sinatra::Base
 		@games = params[:games]
 		if @answer == "No" && @qnum == 1
 			@questions = "Maximum Creativity?"
+			@qnum += 1
+			@games = ["wow", 
+  			"diablo", 
+				"rez", 
+				"monkeyball", 
+				"ikaruga",  
+				"pacman", 
+				"punchout",
+				"rockband"]
+		elsif @answer == "Yes" && @qnum == 1
+			@questions = "Are your reflexes amazing?"
 			@qnum += 1
 			@games = ["minecraft",  
 				"tetris",  
@@ -57,25 +67,15 @@ class MyApp < Sinatra::Base
 				"easports", 
 				"mortalkombat", 
 				"mariokart"]
-		elsif @answer == "Yes" && @qnum == 1
-			@questions = "Are your reflexes amazing?"
-			@qnum += 1
-			@games = ["wow", 
-  			"diablo", 
-				"rez", 
-				"monkeyball", 
-				"ikaruga",  
-				"pacman", 
-				"punchout",
-				"rockband"]
 			#Missing two games			
 		elsif @answer == "No" && @qnum == 2
 			@questions = "Do you want to point & click, click, click...?"
 			@qnum += 1
-			delete_list = ["rez", "rockband", "ikaruga", "pacman", "punchout"] #Missing one
-			delete_list.each do |del|
-				@games.delete_at(@games.index(del))
-			end
+			@games.delete_if {|i| i == "rockband"}
+# 			delete_list = ["rez", "rockband", "ikaruga", "pacman", "punchout"] #Missing one
+# 			delete_list.each do |del|
+# 				@games.delete(del)
+# 			end
 			puts @games
 		elsif @answer == "Yes" && @qnum == 2
 			@questions = "Other next question"
