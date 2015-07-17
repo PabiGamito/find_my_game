@@ -561,6 +561,7 @@ footer .footer-below {
   overflow: hidden;
   padding: 18%;
   padding-top: 25vh;
+	margin-bottom: -500px;
 }
 * {
   box-sizing: border-box;
@@ -634,14 +635,14 @@ footer .footer-below {
 
 /*Home & Back Button Specifications*/
 .back {
-  background: rgb(43,62,80);
+  background: #026fd4;
 }
 .back:hover {
-  background: rgba(254, 95, 85, 0.85);
+  background: #026fd4;
 }
 .back:active,
 .back:focus {
-  background: #fe5f55;
+  background: #026fd4;
 }
 .back:after {
   content: "\f00d";
@@ -650,6 +651,18 @@ footer .footer-below {
   -webkit-animation: grow .4s alternate ease infinite;
   animation: grow .4s alternate ease infinite;
 }
+
+.home {
+  background: #149808;
+}
+.home:hover {
+  background: #149808;
+}
+.home:active,
+.home:focus {
+  background: #149808;
+}
+
 .home:after {
   content: "\f00c";
 }
