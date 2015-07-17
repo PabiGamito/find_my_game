@@ -45,7 +45,7 @@ class MyApp < Sinatra::Base
 
 	post '/questions' do
 		
-		@back=false
+		@back="false"
 		@button1="Yes"
 		@button2="No"
 		@questions = "Do you want to avoid using your brain?"
@@ -136,9 +136,9 @@ class MyApp < Sinatra::Base
 			erb :questions
 		elsif @questions=="Under Construction"
 				erb :under_construction
-		elsif @back true
-			#Back goes to previous question by :next_q for the current q_value and returns the key as the new q_value
-			@questions=="previous question"
+		# elsif @back=="true"
+		# 	#Back goes to previous question by :next_q for the current q_value and returns the key as the new q_value
+		# 	@questions=="previous question"
 		else
 				erb :display
 		end
