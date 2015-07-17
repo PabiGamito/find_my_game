@@ -40,10 +40,23 @@ Yes 1 remove:
   "mariokart"]
   
   Yes 2 (Unreal) remove:
-  nil
+    ["wow", "diablo", "monkeyball"]#missing one
+
+    Yes 3 remove:
+      ["rockband", "ikaruga", "pacman", "punchout"] #End of line no more questions
+    No 3 remove:
+      ["rez"]
 
   No 2 (Average) remove:
-  nil
+     ["rez", "rockband", "ikaruga", "pacman", "punchout"] #missing one
+
+    Yes 3 remove:
+      ["wow", "diablo", "monkeyball"]
+    No 3 remove:
+      #remove the missing ono
+
+
+
 
 No 1 remove:
 ["wow", 
@@ -53,14 +66,31 @@ No 1 remove:
   "ikaruga",  
   "pacman", 
   "punchout",
-  "rockband"
-unkown
-unkown]
-    Yes 2 remove:
-    nil
+  "rockband"] #missing two
+
+  Yes 2 remove:
+    ["tetris",  
+    "lumines", 
+    "limbo",  
+    "braid", 
+    "portal", 
+    "supersmashbros", 
+    "sims", 
+    "citiesskyline", 
+    "simcity", 
+    "easports", 
+    "mortalkombat", 
+    "mariokart"]
+      Yes 3 remove:
+
+      No 3 remove:
 
     No 2 remove:
-    nil
+      ["minecraft"]
+
+      Yes 3 remove:
+
+      No 3 remove:
 
 
 
