@@ -79,9 +79,10 @@ class MyApp < Sinatra::Base
 			
 			}
 		
-		:avoid_brain = "Do you want to avoid using your brain?"
-		:good_reflexes = "How are your reflexes?"
-		@questions = map(:avoid_brain)(@ans_value)
+# 		:avoid_brain = "Do you want to avoid using your brain?"
+# 		:good_reflexes = "How are your reflexes?"
+		
+# 		@questions = map(:avoid_brain)(@ans_value)
 # 		@games = params[:games]
 		
 # #------------FIRST LINE OF QUESTIONS----------------#
