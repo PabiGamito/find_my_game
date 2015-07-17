@@ -99,13 +99,27 @@ class MyApp < Sinatra::Base
 			
 			"Looking for crazy Japanese awesomeness?" => {:next_q => ["katamari_damacy", "Yes for shiny textures and No for indi-magic"], :remove => []},
 			
-			"Yes for shiny textures and No for indi-magic" => {:next_q => ["portal", "braid"], :remove => []},
+			"Yes for shiny textures and No for indi-magic?" => {:next_q => ["portal", "braid"], :remove => []},
 		
 		"Do you enjoy simulations?" => {:next_q => ["Do you want to be in charge of a City?", "Do you have multiple local players?"], :remove => []},
 	
 	"Do you want to be in charge of a City?" => {:next_q => ["cities_skyline", "sims"], :remove => []},
 
-		"Do you have multiple local players?" => {:next_q => ["portal", "braid"], :remove => []}
+			"Do you have multiple local players?" => {:next_q => ["Button mashable?", "Do you want to lose yourself in another world?"], :remove => []},
+			
+			"Do you want to lose yourself in another world?" => {:next_q => ["Coming Soon", "Coming Soon"], :remove => []},
+			
+			"Button mashable?" => {:next_q => ["Does realistic violence upset you?", "Do you own any official team jerseys?"], :remove => []},
+			
+			"Does realistic violence upset you?" => {:next_q => ["super_smash_bros", "Do you like big-ass weapons?"], :remove => []},
+			
+			"Do you own any official team jerseys?" => {:next_q => ["easports", "Does the sound of squealing tires excite you?"], :remove => []},
+			
+			"Do you like big-ass weapons?" => {:next_q => ["soulcalibur", "Do you want to tear out your opponent's spine?"], :remove => []},
+			
+			"Does the sound of squealing tires excite you?" => {:next_q => ["Under Construction", "Under Construction"], :remove => []},
+			
+			"Do you want to tear out your opponent's spine?" => {:next_q => ["mortal_kombat", "unkown"], :remove => []},
 			}
 		
 # 		:avoid_brain = "Do you want to avoid using your brain?"
