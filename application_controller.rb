@@ -10,27 +10,28 @@ class MyApp < Sinatra::Base
 	get '/questions' do
 		@qnum = 1
 		@questions = "Do you want to avoid using your brain?"
-		@games=["wow", 
-		"minecraft", 
-		"diablo", 
-		"rez", 
-		"monkeyball", 
-		"tetris", 
-		"ikaruga", 
-		"lumines", 
-		"limbo", 
-		"pacman", 
-		"punchout", 
-		"braid", 
-		"portal", 
-		"supersmashbros", 
-		"sims", 
-		"citiesskyline", 
-		"simcity", 
-		"easports", 
-		"mortalkombat", 
-		"mariokart", 
-		"rockband"]
+		@games=[]
+# 		@games=["wow", 
+# 		"minecraft", 
+# 		"diablo", 
+# 		"rez", 
+# 		"monkeyball", 
+# 		"tetris", 
+# 		"ikaruga", 
+# 		"lumines", 
+# 		"limbo", 
+# 		"pacman", 
+# 		"punchout", 
+# 		"braid", 
+# 		"portal", 
+# 		"supersmashbros", 
+# 		"sims", 
+# 		"citiesskyline", 
+# 		"simcity", 
+# 		"easports", 
+# 		"mortalkombat", 
+# 		"mariokart", 
+# 		"rockband"]
 		#There are three more games that I can't read the name off
 		erb :questions
   end
@@ -38,29 +39,44 @@ class MyApp < Sinatra::Base
 	post '/questions' do
 		puts params
 		@qnum = params[:qnum].to_i
-		@answer= params[:ans]
+		@answer = params[:ans]
+		@games = params[:games]
 		if @answer == "No" && @qnum == 1
 			@questions = "Maximum Creativity?"
 			@qnum += 1
-			@games -= ["minecraft",  
-								"tetris",  
-								"lumines", 
-								"limbo",  
-								"braid", 
-								"portal", 
-								"supersmashbros", 
-								"sims", 
-								"citiesskyline", 
-								"simcity", 
-								"easports", 
-								"mortalkombat", 
-								"mariokart"]
+			@games = ["minecraft",  
+				"tetris",  
+				"lumines", 
+				"limbo",  
+				"braid", 
+				"portal", 
+				"supersmashbros", 
+				"sims", 
+				"citiesskyline", 
+				"simcity", 
+				"easports", 
+				"mortalkombat", 
+				"mariokart"]
 		elsif @answer == "Yes" && @qnum == 1
-			@questions = "How good are your reflexes?"
+			@questions = "Are your reflexes amazing?"
 			@qnum += 1
+			@games = ["wow", 
+  			"diablo", 
+				"rez", 
+				"monkeyball", 
+				"ikaruga",  
+				"pacman", 
+				"punchout",
+				"rockband"]
+			#Missing two games			
 		elsif @answer == "No" && @qnum == 2
-				@questions = "Hooray!"
+			@questions = "Do you want to point & click, click, click...?"
 			@qnum += 1
+			delete_list = ["rez", "rockband", "ikaruga", "pacman", "punchout"] #Missing one
+			delete_list.each do |del|
+				@games.delete_at(@games.index(del))
+			end
+			puts @games
 		elsif @answer == "Yes" && @qnum == 2
 			@questions = "Other next question"
 			@qnum += 1
