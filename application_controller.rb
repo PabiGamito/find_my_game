@@ -33,7 +33,9 @@ class MyApp < Sinatra::Base
 		"mortalkombat", 
 		"mariokart", 
 		"rockband"]
-		games=GameList.new(@games)
+		puts "test"
+		puts @games
+		@games_list=GameList.new(@games)
 		#There are three more games that I can't read the name off
 		erb :questions
   end
@@ -42,7 +44,7 @@ class MyApp < Sinatra::Base
 		puts params
 		@qnum = params[:qnum].to_i
 		@answer = params[:ans]
-		@games = params[:games]
+# 		@games = params[:games]
 		if @answer == "No" && @qnum == 1
 			@questions = "Maximum Creativity?"
 			@qnum += 1
@@ -54,11 +56,11 @@ class MyApp < Sinatra::Base
 				"pacman", 
 				"punchout",
 				"rockband"]
-			games.remove(remove_list)
+			@games_list.remove(remove_list)
 		elsif @answer == "Yes" && @qnum == 1
 			@questions = "Are your reflexes amazing?"
 			@qnum += 1
-			@games = ["minecraft",  
+			remove_list = ["minecraft",  
 				"tetris",  
 				"lumines", 
 				"limbo",  
@@ -71,7 +73,8 @@ class MyApp < Sinatra::Base
 				"easports", 
 				"mortalkombat", 
 				"mariokart"]
-			#Missing two games			
+			#Missing two games	
+			games.remove(remove_list)
 		elsif @answer == "No" && @qnum == 2
 			@questions = "Do you want to point & click, click, click...?"
 			@qnum += 1

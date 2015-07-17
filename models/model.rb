@@ -1,5 +1,4 @@
 class GameList
-	attr_accessors :games_list
 	def initialize(array)
 		@game_list=array
 	end
