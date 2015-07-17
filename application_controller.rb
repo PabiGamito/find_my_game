@@ -84,8 +84,31 @@ class MyApp < Sinatra::Base
 			
 			"Do you want the hardest game ever?" => {:next_q => ["unknow", "monkeyball"], :remove => []},
 			
-			"Do you plan on playing for the next week straight?" => {:next_q => ["wow", "diablo"], :remove => []}
+			"Do you plan on playing for the next week straight?" => {:next_q => ["wow", "diablo"], :remove => []},
 			
+			"Maximum Creativity?" => {:next_q => ["minecraft", "Do you want to solve some puzzles?"], :remove => []},
+			
+			#DO YOU ENJOY SIMULATIONS
+			"Do you want to solve some puzzles?" => {:next_q => ["Do you feel the need for a storyline as well?", "Do you enjoy simulations?"], :remove => []},
+			
+			"Do you feel the need for a storyline as well?" => {:next_q => ["Are you an Edward Gorey fan?", "Kick it oldschool?"], :remove => []},
+			
+			"Are you an Edward Gorey fan?" => {:next_q => ["limbo", "Looking for crazy Japanese awesomeness?"], :remove => []},
+			
+			"Kick it oldschool?" => {:next_q => ["tetris", "lumines"], :remove => []},
+			
+			"Looking for crazy Japanese awesomeness?" => {:next_q => ["katamari_damacy", "Yes for shiny textures and No for indi-magic"], :remove => []},
+			
+			"Yes for shiny textures and No for indi-magic" => {:next_q => ["portal", "braid"], :remove => []},
+			}
+		
+		"Do you enjoy simulations?" => {:next_q => ["Do you want to be in charge of a City?", "Do you have multiple local players?"], :remove => []},
+			}
+	
+	"Do you want to be in charge of a City?" => {:next_q => ["cities_skyline", "sims"], :remove => []},
+			}
+
+		"Do you have multiple local players?" => {:next_q => ["portal", "braid"], :remove => []},
 			}
 		
 # 		:avoid_brain = "Do you want to avoid using your brain?"

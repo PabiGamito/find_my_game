@@ -33,7 +33,7 @@ class GameList
  		return @game_list
 	end
 	
-# 	def game_list
-# 		@game_list
-# 	end
+def game_list
+	@game_list
+end
 end
