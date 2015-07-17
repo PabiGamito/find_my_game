@@ -1,6 +1,8 @@
 require 'bundler'
 Bundler.require
 
+require './models/model.rb'
+
 class MyApp < Sinatra::Base
 
   get '/' do
@@ -31,6 +33,7 @@ class MyApp < Sinatra::Base
 		"mortalkombat", 
 		"mariokart", 
 		"rockband"]
+		games=GameList.new(@games)
 		#There are three more games that I can't read the name off
 		erb :questions
   end
@@ -43,7 +46,7 @@ class MyApp < Sinatra::Base
 		if @answer == "No" && @qnum == 1
 			@questions = "Maximum Creativity?"
 			@qnum += 1
-			@games = ["wow", 
+			remove_list = ["wow", 
   			"diablo", 
 				"rez", 
 				"monkeyball", 
@@ -51,6 +54,7 @@ class MyApp < Sinatra::Base
 				"pacman", 
 				"punchout",
 				"rockband"]
+			games.remove(remove_list)
 		elsif @answer == "Yes" && @qnum == 1
 			@questions = "Are your reflexes amazing?"
 			@qnum += 1
@@ -71,11 +75,10 @@ class MyApp < Sinatra::Base
 		elsif @answer == "No" && @qnum == 2
 			@questions = "Do you want to point & click, click, click...?"
 			@qnum += 1
-			@games.delete_if {|i| i == "rockband"}
-# 			delete_list = ["rez", "rockband", "ikaruga", "pacman", "punchout"] #Missing one
-# 			delete_list.each do |del|
-# 				@games.delete(del)
-# 			end
+			delete_list = ["rez", "rockband", "ikaruga", "pacman", "punchout"] #Missing one
+			delete_list.each do |del|
+				@games.delete(del)
+			end
 			puts @games
 		elsif @answer == "Yes" && @qnum == 2
 			@questions = "Other next question"
