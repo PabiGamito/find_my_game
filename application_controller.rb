@@ -100,15 +100,12 @@ class MyApp < Sinatra::Base
 			"Looking for crazy Japanese awesomeness?" => {:next_q => ["katamari_damacy", "Yes for shiny textures and No for indi-magic"], :remove => []},
 			
 			"Yes for shiny textures and No for indi-magic" => {:next_q => ["portal", "braid"], :remove => []},
-			}
 		
 		"Do you enjoy simulations?" => {:next_q => ["Do you want to be in charge of a City?", "Do you have multiple local players?"], :remove => []},
-			}
 	
 	"Do you want to be in charge of a City?" => {:next_q => ["cities_skyline", "sims"], :remove => []},
-			}
 
-		"Do you have multiple local players?" => {:next_q => ["portal", "braid"], :remove => []},
+		"Do you have multiple local players?" => {:next_q => ["portal", "braid"], :remove => []}
 			}
 		
 # 		:avoid_brain = "Do you want to avoid using your brain?"
