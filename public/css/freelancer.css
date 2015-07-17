@@ -716,9 +716,12 @@ footer .footer-below {
 	bottom: 10px;
 }
 .needSpace {
-	height: 200px;
+	height: 360px;
 }
 .needFormat {
 	height: 245px;
 	width: 360px;
+}
+.centerText {
+	text-align: center;
 }
