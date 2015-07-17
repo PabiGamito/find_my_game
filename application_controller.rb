@@ -73,9 +73,9 @@ class MyApp < Sinatra::Base
 			
 			"Are you on drugs?" => {:next_q =>["rez", "Do you want to feel like you are?"], :remove => []},
 			
-			"Do you want to feel like you are?" => {:next_q => ["unknown", "How's your timing?"], :remove => []},
+			"Do you want to feel like you are?" => {:next_q => ["unknown", "Is your timing good?"], :remove => []},
 			
-			"How's your timing?" => {:next_q => ["You want to rock out?", "Are 2 buttons too many for you?"], :remove => []},
+			"Is your timing good?" => {:next_q => ["You want to rock out?", "Are 2 buttons too many for you?"], :remove => []},
 			
 			"You want to rock out?" => {:next_q => ["rockband", "ikaruba"], :remove => []},
 			
