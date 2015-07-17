@@ -53,8 +53,10 @@
           <li class="hidden">
             <a href="#page-top"></a>
           </li>
+
+          MAKE IT SO WHEN THIS BUTTON IS PRESSED IT SOMEHOW CHANGES @back="true"
           <li class="page-scroll">
-            <a href="/back">Back</a>
+            <a href="/questions">Back</a>
           </li>
           <li class="page-scroll">
             <a href="#suggest">Suggested Games</a>
@@ -79,8 +81,8 @@
             <h2><%=@questions%></h2>
             <form action='/questions' method="POST">
               <div class="superbuttons">
-                <button type="submit" class="button  yes" name="ans" value="Yes">YES</button>
-                <button type="submit" class="button  no" name="ans" value="No">NO</button>
+                <button type="submit" class="button  yes" name="ans" value="Yes">Yes</button>
+                <button type="submit" class="button  no" name="ans" value="No">No</button>
 								<input type="hidden" name="question" value="<%=@questions%>">
                 <!-- 	<input type="hidden" name="games" value="<%=@games%>"> -->
               </div>

@@ -631,6 +631,33 @@ footer .footer-below {
   -webkit-animation: grow 0.4s alternate ease infinite;
   animation: grow 0.4s alternate ease infinite;
 }
+
+/*Home & Back Button Specifications*/
+.back {
+  background: rgb(43,62,80);
+}
+.back:hover {
+  background: rgba(254, 95, 85, 0.85);
+}
+.back:active,
+.back:focus {
+  background: #fe5f55;
+}
+.back:after {
+  content: "\f00d";
+}
+.back:hover:after {
+  -webkit-animation: grow .4s alternate ease infinite;
+  animation: grow .4s alternate ease infinite;
+}
+.home:after {
+  content: "\f00c";
+}
+.home:hover:after {
+  -webkit-animation: grow 0.4s alternate ease infinite;
+  animation: grow 0.4s alternate ease infinite;
+}
+
 @keyframes grow {
   from {
     transform: scale(0.9);

@@ -23,12 +23,13 @@ class MyApp < Sinatra::Base
 
 	post '/questions' do
 		
-		@qnum = 1
+		@back="false"
+		@button1="Yes"
+		@button2="No"
 		@questions = "Do you want to avoid using your brain?"
 		@games_list_object = GameList.new
 		puts @games_list_object.game_list
 		
-		#WE NEED TO GET RID OF THIS AND DO IT ANOTHER WAY
 		@remove_list_q1_y = ["minecraft",  "tetris",  "lumines", "limbo",  "braid", "portal", "supersmashbros", "sims", "citiesskyline", "simcity", "easports", "mortalkombat", "mariokart"]
 		@remove_list_q1_n = ["wow", "diablo", "monkeyball", "ikaruga",  "pacman", "punchout", "rockband"]	
 		
@@ -108,10 +109,14 @@ class MyApp < Sinatra::Base
 		@questions = map[curr_question][:next_q][@ans_value]
 # 		puts "---"
 # 		puts @questions
+
 		if @questions.include? '?'
 			erb :questions
 		elsif @questions=="Under Construction"
 				erb :under_construction
+		# elsif @back=="true"
+		# 	#Back goes to previous question by :next_q for the current q_value and returns the key as the new q_value
+		# 	@questions=="previous question"
 		else
 				erb :display
 		end
