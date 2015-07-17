@@ -41,6 +41,7 @@ class MyApp < Sinatra::Base
 		#There are three more games that I can't read the name off
 		erb :questions
   end
+	
 
 	post '/questions' do
 		
@@ -107,7 +108,7 @@ class MyApp < Sinatra::Base
 
 			"Do you have multiple local players?" => {:next_q => ["Button mashable?", "Do you want to lose yourself in another world?"], :remove => []},
 			
-			"Do you want to lose yourself in another world?" => {:next_q => ["Coming Soon", "Coming Soon"], :remove => []},
+			"Do you want to lose yourself in another world?" => {:next_q => ["Under Construction", "Under Construction"], :remove => []},
 			
 			"Button mashable?" => {:next_q => ["Does realistic violence upset you?", "Do you own any official team jerseys?"], :remove => []},
 			
@@ -124,8 +125,18 @@ class MyApp < Sinatra::Base
 		
 # 		:avoid_brain = "Do you want to avoid using your brain?"
 # 		:good_reflexes = "How are your reflexes?"
-		
+	
+		@results = map[curr_question][:next_q][@ans_value].upcase
 		@questions = map[curr_question][:next_q][@ans_value]
+# 		puts "---"
+# 		puts @questions
+		if @questions.include? '?'
+			erb :questions
+		elsif @questions=="Under Construction"
+				erb :under_construction
+		else
+				erb :display
+		end
 # 		@remove_list = map[@questions][:remove]
 		
 # #------------FIRST LINE OF QUESTIONS----------------#
@@ -159,6 +170,6 @@ class MyApp < Sinatra::Base
 # 			@questions = "There are no more questions"
 # 		end
 # 		puts @questions
-		erb :questions
+		
 	end
 end
