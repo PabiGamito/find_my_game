@@ -36,12 +36,14 @@ class MyApp < Sinatra::Base
 		puts params
 		curr_question = params[:question]
 		@answer = params[:ans]
+		@back = params[:back]
 		
 		if @answer == "Yes"
 			@ans_value=0
 		elsif @answer == "No"
 			@ans_value=1
 		end
+		
 		
 #------HASH FOR EACH QUESTION AND THE ONE THAT FOLLOWS------#
 		#0=Yes ---- 1=No
@@ -104,7 +106,7 @@ class MyApp < Sinatra::Base
 		
 # 		:avoid_brain = "Do you want to avoid using your brain?"
 # 		:good_reflexes = "How are your reflexes?"
-	
+		
 		@results = map[curr_question][:next_q][@ans_value].upcase
 		@questions = map[curr_question][:next_q][@ans_value]
 # 		puts "---"
@@ -113,7 +115,12 @@ class MyApp < Sinatra::Base
 		if @questions.include? '?'
 			erb :questions
 		elsif @questions=="Under Construction"
-				erb :under_construction
+			erb :under_construction
+		elsif @answer=="Back"
+			@questions = map.find { |k, h| h.values.flatten.include?(curr_question) }.first.to_s
+			erb :questions
+		elsif @answer=="Home"
+			erb :index
 		# elsif @back=="true"
 		# 	#Back goes to previous question by :next_q for the current q_value and returns the key as the new q_value
 		# 	@questions=="previous question"

@@ -53,11 +53,14 @@
           <li class="hidden">
             <a href="#page-top"></a>
           </li>
+					<li class="page-scroll">
+            <a href="/questions">Restart</a>
+          </li>
           <li class="page-scroll">
             <a href="#portfolio">More about the Game</a>
           </li>
           <li class="page-scroll">
-            <a href="#contact">Home</a>
+            <a href="/">Home</a>
           </li>
         </ul>
       </div>
@@ -78,8 +81,9 @@
       <p><i>Scroll down for more info...</i></p>
         <form action='/questions' method="POST">
 						<div class="superbuttons">
-                <button type="button" class="button  back" value="Yes">Back</button>
-                <button type="button" class="button  home" value="No">Home</button>
+                <button type="submit" class="button  back" name="back" value="Back">Back</button>
+								<button class="button  home">Home</button>
+								<input type="hidden" name="question" value="<%=@questions%>">
           </div>
 				</form>
 
