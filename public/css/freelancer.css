@@ -267,9 +267,9 @@ section.success a.active {
     height: 100%;
     opacity: 0;
     background: rgba(40,188,156,.9);
-    -webkit-transition: all ease .5s;
-    -moz-transition: all ease .5s;
-    transition: all ease .5s;
+    -webkit-transition: all ease .100s;
+    -moz-transition: all ease .100s;
+    transition: all ease .100s;
 }
 
 #portfolio .portfolio-item .portfolio-link .caption:hover {
