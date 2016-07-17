@@ -4,4 +4,6 @@ Then this website will find the perfect game for you after asking a series of qu
 
 **Just go to http://find-my-game.herokuapp.com/**
 
-Based on  Eric Lyday's inforgraphic: ![](http://www.dailyinfographic.com/wp-content/uploads/2013/04/best-game-final-150dpi-640x3123.jpg)
+Based on  Eric Lyday's inforgraphic:
+
+![](http://www.dailyinfographic.com/wp-content/uploads/2013/04/best-game-final-150dpi-640x3123.jpg)
